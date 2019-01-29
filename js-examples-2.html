@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>More JavaScript examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+    <link type="text/css" rel="stylesheet" href="shared.css" />
+</head>
+<body>
+    <section id="dynamicSection">
+        <h4>Hello!</h4>
+        <button onclick="sayHello()">Ask</button>
+    </section>
+    <button onclick="paint()">Paint</button>
+    <input type="color" id="colorValue" onchange="paint()" />
+
+    <section id="textSection">
+        This is important
+    </section>
+    <button onclick="toggleHighlight()">Highlight</button>
+</body>
+</html>

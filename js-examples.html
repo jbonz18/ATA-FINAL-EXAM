@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript sandbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>This is static content</h1>
+    <script type="text/javascript">
+        var count = 0;
+
+        function sayHello() {
+            alert('You hit!');
+        }
+
+        function askSomething(){
+            var input = prompt("Tell me a number");
+
+            console.log(input);
+
+            // Create an H3 then give it a text
+            var text = document.createElement("h3");
+            text.innerText = input;
+
+            let section = document.getElementById("dynamicSection");
+            
+            section.appendChild(text);
+
+            var result = "Your input was:" + input;
+            var number = parseFloat(input);
+
+            // Variable declarations
+            var sum = 1 + number;
+            var multiply = 10 * number;
+            var minus = 100 - number;
+            var divide = number / 2;
+
+            // Store new values and display them
+            text = document.createElement("p");
+            text.innerHTML = "Sum: number + 1=" + sum + "<br/>";
+            section.appendChild(text);
+
+            text = document.createElement("p");
+            text.innerHTML = `Multiply: 10 * number =${multiply}` + "<br/>";
+            section.appendChild(text);
+
+            text = document.createElement("p");
+            text.innerHTML = "Divide: number/2=" + divide + "<br/>";
+            section.appendChild(text);
+
+            text = document.createElement("p");
+            text.innerHTML = `Minus: 100 - number=${minus}` + "<br/>";
+            section.appendChild(text);
+
+            var anObject = {
+                Sum : sum,
+                Multiply : multiply,
+                Divide : divide,
+                Minus : minus,
+                isOn : true,
+            };
+
+            console.log(anObject);
+            
+        }
+
+        function askForWeather(){
+
+            //
+            var section = document.getElementById("dynamicSection");
+
+            var text = document.createElement("h2");
+            text.innerText = "";
+
+            var weather = prompt("How is the weather?");
+
+            if (weather === "sunny"){
+                text.innerText = "You should bring sunglasses";
+            }
+            else {
+                text.innerText = "You should take an umbrella"; 
+            }
+            // Flow continues here
+            //
+            section.appendChild(text);
+        }
+
+        function displayContent() {
+            // Say Hello
+            alert("Hey there!");
+
+            document.write("I said, hey! <h2>Again</h2>");
+
+            document.writeln("This is dynamic <br/>");
+
+            document.writeln(new Date());
+
+            // Console logs
+            console.log('This is hidden');
+            console.debug("Debug message");
+            console.error("Error message");
+            console.info("Just information");
+
+            try
+            {
+                // Everything is fine
+                throw "This is unexpected";
+            }
+            catch (ex)
+            {
+                // But if fails
+                console.error(ex);
+            }
+        }
+
+        function arraySample() {
+            var simpleBox = "hello";
+
+            var fruits = ["apples", "watermelon","grapes"];
+            var years = [1970, 1980, 1990, 2010];
+
+            console.log(simpleBox);
+            console.log(fruits);
+
+            var text = document.createElement("h2");
+            var section = document.getElementById("dynamicSection");
+
+            text.innerHTML = fruits;
+            section.appendChild(text);
+        }
+    </script>
+
+    <section id="dynamicSection">
+
+        <button onclick="displayContent()"> Display content </button>
+        <button id="askButton" onclick="askSomething()">Ask something</button>
+    
+        <button id="hitButton" onclick="sayHello()"> 
+                Hit me </button> 
+
+        <button onclick="askForWeather()">Check weather</button>
+    
+        <button onclick="arraySample()">Array example</button>
+    </section>
+
+</body>
+</html>

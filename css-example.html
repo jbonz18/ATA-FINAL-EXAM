@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 
+        External CCS example
+        <link rel="stylesheet" type="text/css" media="screen" href="<externalURL>/main.css" />
+        <script src="main.js"></script>
+    -->
+    <link rel="stylesheet" type="text/css" media="screen" href="shared.css" />
+
+    <style>
+        h2 { font-size: 2.5em }
+
+        p {
+            font-family: 'Verdana'; 
+            font-size: 32px;
+            background: magenta;
+        }
+
+        /*
+        Combined Selector
+        */
+
+        ol li {
+            color: red;
+        }
+
+        ul li {
+            background-color: cornflowerblue;
+            color: blue;
+        }
+
+        /*P-seudo class */
+        ul li:nth-child(2){
+            text-decoration: underline;
+            font-size: 1.5em;
+        }
+
+        #specialName {
+            background: aqua;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+
+    </style>
+</head>
+<body style="background-color: #999999">
+    <h2>Articles and sections</h2>
+    
+    <article style="background-color: #009688">
+        <section style="color:#999999; background-color: #bd3c14">
+            section 1 <i>with italic</i> and <u>underline</u>
+        </section>
+
+        <section>
+            <p>
+                section 2 <b>with bold text </b>
+            </p>
+        </section>
+    </article>
+
+    <h2>Tables</h2>
+    <table border="0" style="background-color: #ff7878; border: 15px ridge rgb(170, 50, 220, .6); text-align: right">
+        <thead>
+            <caption>Table Title</caption>
+            <tr>
+                <td>
+                    <b>Column 0</b>
+                </td>
+                <td>
+                    Column 1
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- This is the actual body of the table -->
+
+            <!-- Row 0 -->
+            <tr>
+                <td>
+                    <div>
+                        Row 0, column 0
+                        😁
+                    </div>
+                </td>
+                <td>Row 0, column 1 😂</td>
+                <td>Row 0, column 2 😃</td>
+            </tr>
+
+            <!-- Row 1 -->
+            <tr>
+                <td>Row 1, column 0 😆</td>
+                <td>Row 1, column 1 😉</td>
+                <td class="highlight">Row 1, column 2 😊</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- List section-->
+
+    <h2 id="specialName">Lists</h2>
+
+    Un-order list
+    <ul style="background-color: #ff7878; border: 15px dashed rgb(170, 50, 220, .6);">
+        <li>Number 1</li>
+        <li>Number 2</li>
+    </ul>
+
+    Ordered list
+    <ol>
+        <li>Number 1</li>
+        <li>Number 2</li>
+    </ol>
+
+    <h2>Controls</h2>
+
+    <div>
+        <button value="button">Click me!</button>
+
+        <br />
+
+        <h3>
+            Drop-down
+        </h3>
+
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+        </select>
+
+        <br />
+
+        <label class="highlight">Password</label>
+        <input type="password" value="123" />
+
+        <br />
+
+        <input type="number" placeholder="123" />
+
+        <br />
+
+        <h3>Radio buttons</h3>
+        <input type="radio" name="animals" value="cats">cats</input>
+        <input type="radio" name="animals" value="dogs">dogs</input>
+
+        <label>Other:</label>
+        <input type="text" />
+
+        <br />
+
+        <h3>
+            Checkboxes
+        </h3>
+        <input type="checkbox">apples</input>
+        <input type="checkbox">grapes</input>
+    </div>
+
+    <p class="highlight">
+        This is a new text
+    </p>
+
+    <footer>
+        <hr />
+        Footer page
+    </footer>
+</body>
+</html>
