@@ -46,14 +46,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="scoreInput">Price</label>
-                                <input id="scoreInput" class="form-control" type="number" onchange="refreshScores()" placeholder="Enter score" />
+                                <input id="scoreInput" class="form-control" type="number" onchange="refreshCart()" placeholder="Enter score" />
                             </div>
-                            <!-- <button class="btn btn-primary" onclick="addNewStudent()">Add</button> -->
                         </section>               
                 </div>
                 <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addNewProduct()">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addNewProduct()">Add</button>
                 </div>
             </div>
             </div>
@@ -61,13 +59,10 @@
 
         <section class="row-fluid">
             <section class="btn-group">
-                <button class="btn btn-primary" onclick="loadDataGrid()">Load</button>
-                <button class="btn btn-secondary" onclick="displayAverage()">Average</button>
+                <button class="btn btn-primary" onclick="loadDataGrid()">Summary</button>
+                <button class="btn btn-secondary" onclick="displayTotal()">Total</button>
             </section>
-            <section class="row-fluid">
-                    <label for="passingScoreInput">Passing score</label>
-                    <input id="passingScoreInput" type="number" value="60" onchange="refreshScores()" />
-            </section>
+            
         </section>
         <section class="row-fluid">
             <section id="dataList" class="border">
@@ -76,7 +71,7 @@
                         <b>Id</b>
                     </div>
                     <div class="col-md">
-                        <b>Name</b>
+                        <b>Product</b>
                     </div>
                     <div class="col-md">
                         <b>Price</b>

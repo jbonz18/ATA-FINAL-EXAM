@@ -2,21 +2,18 @@ var shoppingCart = [
 
  ];
 
-function calculateAverage(){
+function calculateTotal(){
 
-    var average = 0;
+    var total = 0;
     shoppingCart.forEach(produtc => {
-        average = average + product.price;
+        total = total + product.price;
     });
-    average = average / shoppingCart.length;
+    total = total / shoppingCart.length;
 
-    return average;
+    return total;
 }
 
 function loadDataGrid() {
-
-    var jsonData = document.getElementById("jsonData");
-    jsonData.innerText = JSON.stringify (shoppingCart, undefined, 2);
 
     var i = 0;
     let dataList = document.getElementById("dataList");
@@ -28,25 +25,23 @@ function loadDataGrid() {
         
         var id = document.createElement("div");
         id.classList.add("col-sm");
-        id.innerText =  shopping_cart[i].id;
+        id.innerText =  shoppingCart[i].id;
 
         var product = document.createElement("div");
         product.classList.add("col-sm");
-        product.innerText =  shopping_cart[i].product;
+        product.innerText =  shoppingCart[i].product;
         
-        var currentPrice = shopping_cart[i].price;
-
         var price = document.createElement("div");
         price.classList.add("col-sm");
-        price.innerText =  shopping_cart[i].price;
-
-        var currentPrice = shopping_cart[i].price;
+        price.innerText =  shoppingCart[i].price;
+        
+        var currentPrice = shoppingCart[i].price;
         if (currentPrice < document.getElementById("priceInput").value)
         {
             price.classList.add("lowPrice");
         }
 
-        console.log(shopping_cart[i]);
+        console.log(shoppingCart[i]);
 
         dataList.appendChild(listItem);
 
@@ -62,27 +57,28 @@ function loadDataGrid() {
 
         var jsonData = document.getElementById("jsonData");
         jsonData.innerHTML = ("<h3>JSON</h3>");
-        jsonData.innerHTML +=("<pre class='alert alert-secondary'>"); // 1) Bootstrap class
-        jsonData.innerHTML +=(JSON.stringify(shopping_cart, undefined, 2));
+        jsonData.innerHTML +=("<pre class='alert alert-secondary'>"); 
+        jsonData.innerHTML +=(JSON.stringify(shoppingCart, undefined, 2));
         jsonData.innerHTML += ("</pre>");
         jsonData.innerHTML +=("<br/>");
-        //var names = [];      
+        //var names = [];     
+    
     }
 }
 
-function displayAverage()
+function displayTotal()
 {
     var resultSection = document.getElementById("resultSection");
     var paragraph = document.createElement("p");
     paragraph.classList.add("badge"); // 2) Bootstrap classes
     paragraph.classList.add("badge-info");
 
-    paragraph.innerText = "Average: " + calculateAverage();
+    paragraph.innerText = "Total: " + calculateTotal();
 
     resultSection.appendChild(paragraph);
 }
 
-function refreshScores(){
+function refreshCart(){
     let dataList = document.getElementById("dataList");
 
     while (dataList.childElementCount > 1){
@@ -91,20 +87,20 @@ function refreshScores(){
     loadDataGrid();
 }
 
-function addNewProduct()
-{
+function addNewProduct() {
     var priceInput = document.getElementById("priceInput").value;    
     var productInput = document.getElementById("productInput").value;
     var idInput = document.getElementById("idInput").value;
 
-    shopping_cart.push({
+    shoppingCart.push({
         id: idInput,
         product: productInput,
         price: parseFloat(priceInput)
     });
 
-    refreshScores();
+ refreshCart();
 }
+
 
 function myReplacer(name, val) {
     if (typeof val === 'string') {
@@ -120,12 +116,12 @@ function loadData(){
     var i = 0;
     let dataList = document.getElementById("dataList");
     
-    while (i < shopping_cart.length)
+    while (i < shoppingCart.length)
     {
         var listItem = document.createElement("li");
         
-        console.log(shopping_cart[i]);
-        listItem.innerText = shopping_cart[i].name;
+        console.log(shoppingCart[i]);
+        listItem.innerText = shoppingCart[i].product;
 
         dataList.appendChild(listItem);
         i = i + 1; // Alternatively, use i++;
