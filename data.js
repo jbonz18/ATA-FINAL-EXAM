@@ -1,4 +1,4 @@
-var shopping_cart = [
+var shoppingCart = [
 
  ];
 
@@ -16,12 +16,12 @@ function calculateAverage(){
 function loadDataGrid() {
 
     var jsonData = document.getElementById("jsonData");
-    jsonData.innerText = JSON.stringify shoppingCart, undefined, 2);
+    jsonData.innerText = JSON.stringify (shoppingCart, undefined, 2);
 
     var i = 0;
     let dataList = document.getElementById("dataList");
     
-    while (i < shopping_cart.length)
+    while (i < shoppingCart.length)
     {
         var listItem = document.createElement("section");
         listItem.classList.add("row");
