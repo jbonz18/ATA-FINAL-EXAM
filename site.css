@@ -1,23 +1,8 @@
 body {
     font-family: Verdana;
     background-image: url(../ata-web-exam2/forest.jpg);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-  }
-    
-.item {
-    padding: 50px 50px;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-}
-   
 .jumbotron{
     background-image: url(../ata-web-exam2/basket_of_fruits.jpg);
 }
@@ -27,3 +12,11 @@ body {
     display: flex;
     justify-content: center;
 }
+/* 
+.highlight {
+    background-color: yellow;
+}
+
+.lowScore {
+    color: red;
+} */
